@@ -7,20 +7,23 @@ git入门：
 
 
 - 提交更改：
-`gh repo create`：为项目创建存储库。
-`git status`：用于查看在你上次提交之后是否对文件进行再次修改。
-`git add README.md && git commit -m "Add README"`：暂存并提交文件
-`git push --set-upstream origin HEAD`：将更改推送到您的分支。
-**注意：origin是远程仓库在本地的一个指针！！！HEAD是指向你正在工作的本地分支的指针！！！**
-- 创建存储的分支
-`gh repo fork REPOSITORY`：格式`gh repo fork OWNER/REPO`
-**注意：私有项目无法fork!!!同时也不能fork自己已有的项目！！！这似乎算是一个bug.**
-`gh repo fork REPOSITORY --org "octo-org"`：在组织中创建分支，用`--org`标记。
-**注意：fork相当于在你的远端有了一个和你复刻的仓库一样的仓库，这和clone不同，clone是在本地拥有一个你想要的仓库。**
-`gh repo fork REPOSITORY --clone=true`：若要创建分支的克隆，使用 `--clone` 标记。
+  `gh repo create`：为项目创建存储库。
+  `git status`：用于查看在你上次提交之后是否对文件进行再次修改。
+  `git add README.md && git commit -m "Add README"`：暂存并提交文件
+  `git push --set-upstream origin HEAD`：将更改推送到您的分支。
+  **注意：origin是远程仓库在本地的一个指针！！！HEAD是指向你正在工作的本地分支的指针！！！**
 
-​		**这里不是很明白！！！**
-​				**`gh repo fork REPOSITORY --remote=true`：若要为分支存储库配置远程存储库，使用 `--remote` 标志。
+- 创建存储的分支
+
+  **注意：gh命令主要是对远端仓库的处理！！！！**
+
+  `gh repo fork REPOSITORY`：格式`gh repo fork OWNER/REPO`
+  **注意：私有项目无法fork!!!同时也不能fork自己已有的项目！！！**
+  `gh repo fork REPOSITORY --org "octo-org"`：在组织中创建分支，用`--org`标记。
+  **注意：fork相当于在你的远端有了一个和你复刻的仓库一样的仓库，这和clone不同，clone是在本地拥有一个你想要的仓库。**
+  `gh repo fork REPOSITORY --clone=true`：若要创建分支的克隆，使用 `--clone` 标记。
+
+​		**`gh repo fork REPOSITORY --remote=true`：若要为分支存储库配置远程存储库，使用 `--remote` 标志。
 ​				`gh repo fork REPOSITORY --remote-name "main-remote-repo"`：若要指定远程存储库的名称，请使用 `--remote-name` 标志。**
 
 - 创建分支以处理
@@ -82,3 +85,10 @@ https://docs.github.com/zh/get-started/using-git/getting-changes-from-a-remote-r
 ​				**git fetch和git pull的区别：
 ​				https://www.cnblogs.com/runnerjack/p/9342362.html**
 
+- **git remote** 命令用于用于管理 Git 仓库中的远程仓库。
+
+  https://www.runoob.com/git/git-remote.html
+
+error: remote origin already exists.表示远程仓库已存在。-》`git remote rm origin`删除关联的origin的远程库。
+
+token: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
